@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 
 export default function ReadFile() {
   const params = useParams();
-  const id = params?.id;  // e.g., "123"
+  const id = params?.id;  
 
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
@@ -36,7 +36,7 @@ export default function ReadFile() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Product Detail</h1>
-      <p><strong>ID:</strong> {product.id}</p> {/* Your numeric custom id */}
+      <p><strong>ID:</strong> {product.id}</p> 
       <p><strong>Title:</strong> {product.title || 'N/A'}</p>
       <p><strong>Description:</strong> {product.description || 'N/A'}</p>
       <p><strong>Sales:</strong> {product.sales ?? '0'}</p>

@@ -3,10 +3,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Product() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const router=useRouter();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -25,9 +27,11 @@ export default function Product() {
   }, []);
 
   const handleDelete=async(id)=>{
+    const confirm = window.confirm('Are you sure you want to delete this product?');
+    if (!confirm) return;
   try{
-    await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
-    alert('deleted product');
+    await axios.delete(`/api/product/${id}`);
+     router.refresh();
   }
   catch (err) {
     console.error("Error deleting products:", err);
@@ -38,7 +42,7 @@ export default function Product() {
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Product List</h1>
-       <Link href='/components/products'> <h1 className="text-xl font-semibold text-gray-600">Record Info</h1></Link>
+       <Link href='/components/products'> <h1 className="text-xl font-semibold text-purple-600 underline">Create Record </h1></Link>
       </div>
 
       <div className="overflow-x-auto">

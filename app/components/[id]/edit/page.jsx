@@ -7,7 +7,7 @@ import React, { use, useEffect, useState } from 'react'
 function page({params}) {
 const {id}=use(params);
 const [form,setForm]=useState({
-    no:'',
+  
     id:'',
     title:'',
     description:'',
@@ -50,7 +50,7 @@ const hadlerSubmit=async(e)=>{
         <table className="min-w-full border border-gray-300 divide-y divide-gray-200">
           <thead className="bg-gray-100 text-left text-sm font-semibold text-gray-700">
             <tr>
-              <th className="px-4 py-2">NO</th>
+             
               <th className="px-4 py-2">Pr_ID</th>
               <th className="px-4 py-2">Title</th>
               <th className="px-4 py-2">Description</th>
@@ -61,16 +61,7 @@ const hadlerSubmit=async(e)=>{
           </thead>
           <tbody>
             <tr className="bg-white hover:bg-gray-50">
-              <td className="px-4 py-2">
-                <input
-                  type="number"
-                  name="no"
-                  value={form.no}
-                  onChange={(e)=>setForm({...form,no:e.target.value})}
-                  className="w-full border rounded px-2 py-1 text-sm"
-                  placeholder="1"
-                />
-              </td>
+             
               <td className="px-4 py-2">
                 <input
                   type="number"
