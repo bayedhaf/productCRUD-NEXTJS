@@ -12,7 +12,7 @@ export default function Product() {
     const fetchPosts = async () => {
       try {
 
-        const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        const res = await axios.get('/api/product');
         setPosts(res.data);
       } catch (err) {
         console.error("Error fetching products:", err);

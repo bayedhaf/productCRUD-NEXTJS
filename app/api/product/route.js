@@ -31,3 +31,14 @@ export async function POST(req) {
     );
   }
 }
+
+export async  function GET(){
+  await ConnectedDB();
+  try{
+    const res=await ProductList.find();
+    return new NextResponse(JSON.stringify(res),{status:200});
+  }
+  catch(error){
+    console.error(error);
+  }
+}

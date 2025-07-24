@@ -10,5 +10,5 @@ const ProductSchema=new mongoose.Schema({
     price:{type:Number}
 })
 
-const ProductList=mongoose.models.ProductList || mongoose.model('User', ProductSchema);
+const ProductList=mongoose.models.ProductList || mongoose.model('ProductList', ProductSchema);
 export default ProductList;

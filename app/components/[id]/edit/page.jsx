@@ -22,7 +22,7 @@ const router=useRouter();
 useEffect(()=>{
     const fetchData=async()=>{
         try{
-            const res=await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+            const res=await axios.get(`/api/product/${id}`);
             setForm(res.data);
         }
         catch(error){
@@ -36,7 +36,7 @@ useEffect(()=>{
 const hadlerSubmit=async(e)=>{
     e.preventDefault();
     try{
-        await axios.put(`https://jsonplaceholder.typicode.com/posts/${id}`,form);
+        await axios.put(`/api/product/${id}`,form);
         router.push('/');
     }
     catch(error){
@@ -140,7 +140,7 @@ const hadlerSubmit=async(e)=>{
             type="submit"
             className="bg-blue-600 text-white font-medium px-4 py-2 rounded hover:bg-blue-700 transition"
           >
-            edit
+            Save
           </button>
         </div>
       </form>
